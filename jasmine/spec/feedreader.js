@@ -123,9 +123,8 @@ $(function() {
                 });
             });
 
-            it("the content changes by loadFeed()",function(done){
+            it("the content changes by loadFeed()",function(){
                 expect(initFeedSelection).not.toBe(newFeedSelection);
-                done();    
             });
         });
 }());
