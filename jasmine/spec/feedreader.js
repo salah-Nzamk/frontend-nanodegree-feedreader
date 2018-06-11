@@ -116,7 +116,7 @@ $(function() {
             var newFeedSelection;
             beforeEach(function(done) {
                 loadFeed(0, function(){
-                    initFeedSelection = document.querySelector(".feed").innerHTML;
+                    initFeedSelection = document.querySelectorAll(".feed").innerHTML;
                     loadFeed(1, function(){
                         
                         done();
@@ -125,7 +125,7 @@ $(function() {
             });
 
             it("the content changes by loadFeed()",function(done){
-                newFeedSelection = document.querySelector(".feed").innerHTML;
+                newFeedSelection = document.querySelectorAll(".feed").innerHTML;
                 expect(initFeedSelection).not.toBe(newFeedSelection);
                 done();    
             });
