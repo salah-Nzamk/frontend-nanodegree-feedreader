@@ -76,9 +76,9 @@ $(function() {
           */
          it('display when Clicked and hide when clicked again', () => {
             $('.menu-icon-link').click();
-            expect(body.className).not.toContain('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             $('.menu-icon-link').click();
-            expect(body.className).toContain('menu-hidden')
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
           
 
@@ -100,6 +100,7 @@ $(function() {
         });
         it("there is at least a single .entry withing .feed after loadFeed() is called", function(){
             expect($('.feed .entry')).toBeDefined();
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
        /* test suite just contains a related set of tests.
