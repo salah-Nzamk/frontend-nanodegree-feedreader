@@ -98,9 +98,10 @@ $(function() {
                 done();
             });
         });
-        it("there is at least a single .entry withing .feed after loadFeed() is called", function(){
-            expect($('.feed .entry')).toBeDefined();
-            expect($('.feed .entry').length).toBeGreaterThan(0);
+        it("there is at least a single .entry withing .feed after loadFeed() is called", function(done){
+            var numberEntries = document.querySelector(".feed").getElementsByClassName("entry").length;
+            expect(numberEntries).toBeGreaterThan(0);
+            done();
         });
     });
        /* test suite just contains a related set of tests.
@@ -123,8 +124,9 @@ $(function() {
                 });
             });
 
-            it("the content changes by loadFeed()",function(){
+            it("the content changes by loadFeed()",function(done){
                 expect(initFeedSelection).not.toBe(newFeedSelection);
+                done();    
             });
         });
 }());
